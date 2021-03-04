@@ -72,11 +72,9 @@ public class UserController {
     @PostMapping("user/book/addByName")
     public void addBookToUserByName(@RequestParam String name, @RequestParam String title) {
         userService.findUserByName(name).addBook(bookService.findBookByTitle(title));
-    }
-
-    @PostMapping("user/book/remove")
-    public void removeBookFromUser(@RequestParam(name = "user_id", defaultValue = "") Long userId, @RequestParam(name = "book_id") Long bookId) {
-        userService.findUserById(userId).removeBook(bookService.findBookById(bookId));
+        bookService.findBookByTitle(title).addReadBy(userService.findUserByName(name));
+        System.out.println(userService.findUserByName(name).toString());
+        System.out.println(bookService.findBookByTitle(title).toString());
     }
 
 }

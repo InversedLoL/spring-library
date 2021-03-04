@@ -39,4 +39,9 @@ public class BookService {
         return null;
     }
 
+    public void addReadBy(Book book, User user) {
+        book.addReadBy(user);
+        bookRepository.save(book);
+    }
+
 }

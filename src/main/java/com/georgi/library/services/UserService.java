@@ -47,9 +47,4 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void removeBookFromUser(User user, Book book) {
-        user.removeBook(book);
-        userRepository.save(user);
-    }
-
 }

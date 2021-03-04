@@ -31,10 +31,6 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public List<Book> getBookList() { return bookList; }
 
     public void addBook(Book book) {
@@ -43,5 +39,14 @@ public class User {
 
     public void removeBook(Book book) {
         bookList.remove(book);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", name='" + name + '\'' +
+                ", bookList=" + bookList +
+                '}';
     }
 }

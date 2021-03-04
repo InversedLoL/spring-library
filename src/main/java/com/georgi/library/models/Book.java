@@ -28,7 +28,16 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void addReadBy(User user) {
+        readBy.add(user);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", title='" + title + '\'' +
+                ", readBy=" + readBy +
+                '}';
     }
 }
